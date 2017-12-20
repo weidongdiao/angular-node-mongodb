@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>MY MEAN</title>
+    <link rel="stylesheet" type="text/css"
+          href="/public/css/styles.css" />
+    <link rel="stylesheet" type="text/css"
+          href="/public/css/draggable_styles.css" />
+    <link rel="stylesheet" type="text/css"
+          href="/public/css/weather_styles.css" />
+    <link rel="stylesheet" type="text/css"
+          href="/public/css/table_styles.css" />
+</head>
+<body>
+<my_tabs>
+    <my_pane title="Weather">
+        <div ng-include="'/public/html/weather.html'"></div>
+    </my_pane>
+    <my_pane title="Draggable">
+        <div ng-include="'/public/html/draggable.html'"></div>
+    </my_pane>
+    <my_pane title="Tables">
+        <div ng-include="'/public/html/word_table.html'"></div>
+    </my_pane>
+</my_tabs>
+<script type="text/javascript" src="https://code.angularjs.org/1.6.7/angular.min.js"></script>
+<script type="text/javascript" src="/public/js/myapp.js"></script>
+</body>
+</html>

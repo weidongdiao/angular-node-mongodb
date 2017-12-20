@@ -1,0 +1,38 @@
+<div ng-controller="tableController as vm"><hr>
+    <input class="findButton" type="button"
+           value="Find Words" ng-click="vm.find()" />
+    <div id="sortOptions">
+        <label class="tableLabel">Page Limit</label>
+        <input class="tableInput" type="text" ng-model="vm.limit" /><br>
+        <label class="tableLabel">Contains</label>
+        <input class="tableInput" type="text" ng-model="vm.contains" /><br>
+        <label class="tableLabel">Sort By</label>
+        <select class="tableInput" ng-model="vm.sortField"
+                ng-options="field for field in vm.sortFields"></select>
+        <input type="radio" ng-model="vm.direction" value="asc"> Ascending
+        <input type="radio" ng-model="vm.direction" value="desc"> Descending
+    </div>
+    <hr>
+    <div>
+        <input class="pageButton" type="button" value="Prev"
+               ng-click="vm.prev()" />
+        <input class="pageButton" type="button" value="Next"
+               ng-click="vm.next()" />
+        <label class="tableLabel">Words {{vm.skip+1}} to {{vm.skipEnd}}</label>
+        <hr>
+        <div id="tableContainer">
+            <table>
+                <tr><th>Word</th><th>First</th><th>Last</th><th>Length</th>
+                    <th>Vowels</th><th>Consonants</th></tr>
+                <tr ng-repeat="word in vm.words">
+                    <td>{{word.word}}</td>
+                    <td>{{word.first}}</td>
+                    <td>{{word.last}}</td>
+                    <td>{{word.size}}</td>
+                    <td>{{word.stats.vowels}}</td>
+                    <td>{{word.stats.consonants}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
